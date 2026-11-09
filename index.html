@@ -1,430 +1,548 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Satyam Raj - Portfolio</title>
-    <link rel="stylesheet" href="styles.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Satyam Raj - Software Developer | MERN &amp; DevOps</title>
+<meta name="description" content="Satyam Raj — Software Developer working on AI projects at Extension Technologies (MERN stack, RAG, DevOps). AWS Builder Center author, open-source contributor, and builder of DevOps interview guides, ClaimCheck and PriceDrop Hunter.">
+<meta property="og:title" content="Satyam Raj - Software Developer">
+<meta property="og:description" content="Software Developer working on AI projects at Extension Technologies. MERN, DevOps, AWS — and daily technical writing on AWS Builder Center.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://stymrj.github.io/">
+<meta name="twitter:card" content="summary">
+<meta name="theme-color" content="#0a0a1a">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%238b5cf6'/%3E%3Cstop offset='1' stop-color='%2322d3ee'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='100' height='100' rx='22' fill='url(%23g)'/%3E%3Ctext x='50' y='70' font-size='46' text-anchor='middle' fill='white' font-family='Arial'%3ESR%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+<style>
+:root{
+  --bg:#0a0a1a; --bg2:#0d0d24; --text:#f1f2ff; --muted:#a5a8c3; --muted2:#8b8ea8;
+  --violet:#8b5cf6; --cyan:#22d3ee; --pink:#ec4899; --green:#34d399; --amber:#fbbf24;
+  --glass:rgba(255,255,255,.045); --glass2:rgba(255,255,255,.07);
+  --border:rgba(255,255,255,.10); --border2:rgba(255,255,255,.16);
+  --grad:linear-gradient(135deg,#8b5cf6,#ec4899 45%,#22d3ee);
+  --grad-text:linear-gradient(90deg,#a78bfa,#f472b6 50%,#22d3ee);
+  --shadow:0 18px 50px rgba(0,0,0,.45);
+  --r:20px;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--text);font-family:'Inter',system-ui,sans-serif;line-height:1.65;overflow-x:hidden}
+h1,h2,h3,h4{font-family:'Space Grotesk',sans-serif;line-height:1.2}
+a{color:inherit;text-decoration:none}
+img{max-width:100%;display:block}
+.container{max-width:1140px;margin:0 auto;padding:0 24px}
+section{padding:96px 0;position:relative}
+::selection{background:rgba(139,92,246,.5)}
+
+/* aurora background */
+.aurora{position:fixed;inset:0;z-index:0;pointer-events:none;overflow:hidden}
+.aurora span{position:absolute;border-radius:50%;filter:blur(110px);opacity:.5}
+.aurora .a1{width:560px;height:560px;background:#6d28d9;top:-180px;left:-120px;animation:drift 22s ease-in-out infinite alternate}
+.aurora .a2{width:480px;height:480px;background:#0e7490;top:32%;right:-160px;animation:drift 26s ease-in-out infinite alternate-reverse}
+.aurora .a3{width:420px;height:420px;background:#be185d;bottom:-160px;left:34%;opacity:.35;animation:drift 30s ease-in-out infinite alternate}
+@keyframes drift{from{transform:translate(0,0) scale(1)}to{transform:translate(50px,36px) scale(1.12)}}
+body::before{content:"";position:fixed;inset:0;z-index:0;pointer-events:none;background-image:radial-gradient(rgba(255,255,255,.05) 1px,transparent 1px);background-size:34px 34px;opacity:.5}
+header,main,footer{position:relative;z-index:1}
+
+/* nav */
+header{position:sticky;top:0;z-index:50;backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);background:rgba(10,10,26,.72);border-bottom:1px solid var(--border);transition:box-shadow .3s}
+header.scrolled{box-shadow:0 10px 40px rgba(0,0,0,.5)}
+nav{display:flex;align-items:center;justify-content:space-between;height:68px}
+.logo a{font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:1.5rem;background:var(--grad);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+.nav-links{display:flex;gap:6px;list-style:none}
+.nav-links a{padding:8px 13px;border-radius:999px;font-size:.92rem;font-weight:500;color:var(--muted);transition:.25s}
+.nav-links a:hover,.nav-links a.active{color:#fff;background:var(--glass2)}
+.hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:8px;background:none;border:0}
+.hamburger .line{width:24px;height:2px;background:#fff;border-radius:2px;transition:.3s}
+.hamburger.active .line:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.hamburger.active .line:nth-child(2){opacity:0}
+.hamburger.active .line:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+
+/* section headings */
+.eyebrow{display:inline-block;font-size:.78rem;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--cyan);background:rgba(34,211,238,.1);border:1px solid rgba(34,211,238,.25);padding:6px 14px;border-radius:999px;margin-bottom:16px}
+.section-title{font-size:clamp(1.9rem,4vw,2.7rem);font-weight:700;margin-bottom:14px}
+.section-title .grad{background:var(--grad-text);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+.section-sub{color:var(--muted);max-width:640px;margin-bottom:44px}
+.center{text-align:center}
+.center .section-sub{margin-left:auto;margin-right:auto}
+
+/* hero */
+.hero{padding:110px 0 80px}
+.hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:56px;align-items:center}
+.greeting{font-size:1.05rem;color:var(--muted);margin-bottom:10px}
+.hero h1{font-size:clamp(3rem,7vw,4.6rem);font-weight:700;letter-spacing:-.02em}
+.hero h1 .grad{background:var(--grad-text);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+.hero h2{font-size:clamp(1.25rem,2.6vw,1.7rem);font-weight:500;color:var(--muted);margin:14px 0 18px}
+.hero h2 b{color:var(--cyan);font-weight:600}
+.hero-desc{color:var(--muted);font-size:1.06rem;max-width:560px}
+.cta-row{display:flex;flex-wrap:wrap;gap:14px;margin:32px 0 26px}
+.btn{display:inline-flex;align-items:center;gap:9px;padding:13px 26px;border-radius:999px;font-weight:600;font-size:.98rem;transition:.25s;border:1px solid transparent}
+.btn-primary{background:var(--grad);color:#fff;box-shadow:0 8px 30px rgba(139,92,246,.45)}
+.btn-primary:hover{transform:translateY(-3px);box-shadow:0 14px 38px rgba(236,72,153,.5)}
+.btn-ghost{background:var(--glass);border-color:var(--border2);color:#fff;backdrop-filter:blur(8px)}
+.btn-ghost:hover{transform:translateY(-3px);border-color:var(--cyan);box-shadow:0 10px 30px rgba(34,211,238,.2)}
+.socials{display:flex;gap:12px}
+.socials a{width:46px;height:46px;display:flex;align-items:center;justify-content:center;border-radius:14px;background:var(--glass);border:1px solid var(--border);font-size:1.15rem;color:var(--muted);transition:.25s}
+.socials a:hover{color:#fff;border-color:var(--violet);transform:translateY(-3px);box-shadow:0 10px 26px rgba(139,92,246,.35)}
+.hero-photo{position:relative;display:flex;justify-content:center}
+.photo-ring{position:relative;width:min(320px,80vw);aspect-ratio:1;border-radius:50%;padding:6px;background:conic-gradient(from 210deg,#8b5cf6,#ec4899,#22d3ee,#8b5cf6);box-shadow:0 0 70px rgba(139,92,246,.45);animation:ring 7s linear infinite}
+@keyframes ring{to{filter:hue-rotate(40deg)}}
+.photo-ring img{width:100%;height:100%;object-fit:cover;border-radius:50%;border:5px solid #0a0a1a}
+.avail{position:absolute;bottom:16px;left:50%;transform:translateX(-50%);white-space:nowrap;display:flex;align-items:center;gap:8px;background:rgba(10,10,26,.85);border:1px solid rgba(52,211,153,.4);backdrop-filter:blur(8px);color:#a7f3d0;font-size:.85rem;font-weight:600;padding:8px 16px;border-radius:999px;box-shadow:0 8px 26px rgba(0,0,0,.5)}
+.avail .dot{width:9px;height:9px;border-radius:50%;background:#34d399;box-shadow:0 0 0 0 rgba(52,211,153,.6);animation:pulse 1.8s infinite}
+@keyframes pulse{70%{box-shadow:0 0 0 9px rgba(52,211,153,0)}100%{box-shadow:0 0 0 0 rgba(52,211,153,0)}}
+.stats-row{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:64px}
+.stat{background:var(--glass);border:1px solid var(--border);border-radius:var(--r);padding:22px 18px;text-align:center;backdrop-filter:blur(12px);transition:.3s}
+.stat:hover{transform:translateY(-4px);border-color:var(--border2)}
+.stat b{display:block;font-family:'Space Grotesk',sans-serif;font-size:1.55rem;background:var(--grad-text);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+.stat span{font-size:.85rem;color:var(--muted)}
+
+/* glass cards */
+.card{background:var(--glass);border:1px solid var(--border);border-radius:var(--r);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);transition:transform .3s,border-color .3s,box-shadow .3s}
+.card:hover{transform:translateY(-6px);border-color:var(--border2);box-shadow:var(--shadow)}
+
+/* about / skills */
+.about-grid{display:grid;grid-template-columns:1fr 1.1fr;gap:44px;align-items:start}
+.about-text p{color:var(--muted);font-size:1.05rem}
+.about-text p b{color:var(--text)}
+.skill-group{margin-bottom:26px}
+.skill-group h3{font-size:1.05rem;margin-bottom:12px;display:flex;align-items:center;gap:10px}
+.skill-group h3 i{font-size:.95rem}
+.skill-group h3 .ic-violet{color:#a78bfa}.skill-group h3 .ic-cyan{color:#22d3ee}.skill-group h3 .ic-pink{color:#f472b6}.skill-group h3 .ic-green{color:#34d399}
+.tags{display:flex;flex-wrap:wrap;gap:9px}
+.tags span{font-size:.86rem;font-weight:500;padding:7px 14px;border-radius:999px;border:1px solid var(--border);background:var(--glass)}
+.tags span:nth-child(6n+1){color:#c4b5fd;border-color:rgba(139,92,246,.4);background:rgba(139,92,246,.12)}
+.tags span:nth-child(6n+2){color:#67e8f9;border-color:rgba(34,211,238,.4);background:rgba(34,211,238,.1)}
+.tags span:nth-child(6n+3){color:#f9a8d4;border-color:rgba(236,72,153,.4);background:rgba(236,72,153,.1)}
+.tags span:nth-child(6n+4){color:#6ee7b7;border-color:rgba(52,211,153,.4);background:rgba(52,211,153,.1)}
+.tags span:nth-child(6n+5){color:#fcd34d;border-color:rgba(251,191,36,.4);background:rgba(251,191,36,.1)}
+.tags span:nth-child(6n+6){color:#93c5fd;border-color:rgba(96,165,250,.4);background:rgba(96,165,250,.1)}
+
+/* experience timeline */
+.timeline{position:relative;max-width:820px;margin:0 auto;padding-left:34px}
+.timeline::before{content:"";position:absolute;left:9px;top:8px;bottom:8px;width:2px;background:linear-gradient(#8b5cf6,#ec4899,#22d3ee);opacity:.6}
+.timeline-item{position:relative;margin-bottom:28px}
+.timeline-item::before{content:"";position:absolute;left:-34px;top:26px;width:20px;height:20px;border-radius:50%;background:var(--bg);border:3px solid var(--violet);box-shadow:0 0 16px rgba(139,92,246,.8)}
+.timeline-item:nth-child(2)::before{border-color:var(--cyan);box-shadow:0 0 16px rgba(34,211,238,.8)}
+.timeline-item .card{padding:28px 30px}
+.timeline-item h3{font-size:1.3rem;margin-bottom:4px}
+.timeline-item .org{color:var(--cyan);font-weight:600;margin-bottom:2px}
+.timeline-item .when{display:inline-block;font-size:.8rem;font-weight:600;color:#f9a8d4;background:rgba(236,72,153,.12);border:1px solid rgba(236,72,153,.3);padding:3px 12px;border-radius:999px;margin:8px 0 12px}
+.timeline-item p.desc{color:var(--muted)}
+.timeline-item .tags{margin-top:16px}
+
+/* projects */
+.project-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.project-card{display:flex;flex-direction:column;overflow:hidden}
+.project-card .bar{height:5px;background:var(--grad)}
+.project-card:nth-child(3n+2) .bar{background:linear-gradient(90deg,#22d3ee,#8b5cf6)}
+.project-card:nth-child(3n) .bar{background:linear-gradient(90deg,#ec4899,#fbbf24)}
+.project-card .body{padding:26px;display:flex;flex-direction:column;flex:1}
+.project-card .date{font-size:.78rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--cyan);margin-bottom:10px}
+.project-card h3{font-size:1.28rem;margin-bottom:10px}
+.project-card p.desc{color:var(--muted);font-size:.95rem;flex:1}
+.project-card .tags{margin:18px 0 20px}
+.project-link{display:inline-flex;align-items:center;gap:8px;font-weight:600;color:#fff;background:var(--glass2);border:1px solid var(--border2);padding:10px 18px;border-radius:999px;align-self:flex-start;transition:.25s}
+.project-link:hover{background:var(--grad);border-color:transparent;box-shadow:0 8px 24px rgba(139,92,246,.45)}
+
+/* coding profiles */
+.profiles-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.profile-card{padding:32px 26px;text-align:center}
+.profile-card .logo-wrap{width:84px;height:84px;margin:0 auto 18px;border-radius:22px;background:#fff;display:flex;align-items:center;justify-content:center;padding:12px;box-shadow:0 10px 30px rgba(0,0,0,.4)}
+.profile-card .logo-wrap img{max-height:100%;object-fit:contain}
+.profile-card h3{font-size:1.25rem;margin-bottom:10px}
+.profile-card .label{color:var(--muted);font-size:.95rem;margin-bottom:22px}
+.profile-card .label i{color:var(--amber);margin-right:6px}
+.profile-link{display:inline-flex;align-items:center;gap:8px;font-weight:600;color:var(--cyan);border:1px solid rgba(34,211,238,.35);background:rgba(34,211,238,.08);padding:10px 20px;border-radius:999px;transition:.25s}
+.profile-link:hover{background:rgba(34,211,238,.18);transform:translateY(-2px)}
+
+/* education */
+.edu-list{max-width:820px;margin:0 auto;display:flex;flex-direction:column;gap:20px}
+.edu-item{display:flex;gap:22px;align-items:center;padding:26px 28px}
+.edu-item .edu-logo{flex:0 0 74px;width:74px;height:74px;border-radius:16px;background:#fff;display:flex;align-items:center;justify-content:center;padding:9px}
+.edu-item .edu-logo img{max-height:100%;object-fit:contain}
+.edu-item h3{font-size:1.2rem;margin-bottom:4px}
+.edu-item .inst{color:var(--cyan);font-weight:600}
+.edu-item .meta{color:var(--muted);font-size:.93rem}
+.edu-item .tagline{color:var(--muted2);font-size:.88rem;font-style:italic}
+
+/* contact */
+.contact-card{max-width:760px;margin:0 auto;padding:48px 36px;text-align:center}
+.contact-card .avatar{width:120px;height:120px;border-radius:50%;object-fit:cover;margin:0 auto 20px;border:4px solid transparent;background:var(--grad) padding-box;border:4px solid rgba(139,92,246,.6);box-shadow:0 0 40px rgba(139,92,246,.4)}
+.contact-card h3{font-size:1.7rem;margin-bottom:6px}
+.contact-card .sub{color:var(--muted);margin-bottom:30px}
+.contact-rows{display:flex;flex-wrap:wrap;justify-content:center;gap:14px;margin-bottom:30px}
+.contact-rows .row{display:flex;align-items:center;gap:10px;background:var(--glass);border:1px solid var(--border);border-radius:14px;padding:12px 18px;font-size:.95rem}
+.contact-rows .row i{color:var(--cyan)}
+.contact-rows .row b{font-weight:600}
+.contact-rows .row span{color:var(--muted)}
+
+footer{border-top:1px solid var(--border);padding:28px 0;text-align:center;color:var(--muted2);font-size:.9rem}
+footer .grad-dot{color:var(--pink)}
+
+/* reveal */
+.reveal{opacity:0;transform:translateY(26px);transition:opacity .7s ease,transform .7s ease}
+.reveal.visible{opacity:1;transform:none}
+
+@media (max-width:900px){
+  .hero-grid{grid-template-columns:1fr;gap:44px}
+  .hero-photo{order:-1}
+  .photo-ring{width:min(240px,64vw)}
+  .about-grid{grid-template-columns:1fr}
+  .project-grid,.profiles-grid{grid-template-columns:repeat(2,1fr)}
+  .stats-row{grid-template-columns:repeat(2,1fr)}
+}
+@media (max-width:640px){
+  section{padding:68px 0}
+  .hamburger{display:flex}
+  .nav-links{position:fixed;top:68px;left:0;right:0;flex-direction:column;background:rgba(10,10,26,.97);border-bottom:1px solid var(--border);padding:18px 24px 26px;gap:4px;transform:translateY(-130%);transition:transform .35s;backdrop-filter:blur(18px)}
+  .nav-links.active{transform:translateY(0)}
+  .nav-links a{display:block;padding:12px 14px}
+  .project-grid,.profiles-grid{grid-template-columns:1fr}
+  .edu-item{flex-direction:column;text-align:center}
+  .contact-card{padding:36px 22px}
+  .hero{padding:64px 0 56px}
+}
+</style>
 </head>
 <body>
-    <header>
-        <nav class="container">
-            <div class="logo">
-                <a href="#home">SR</a>
-            </div>
-            <ul class="nav-links">
-                <li><a href="#home">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#coding-profiles">Coding Profiles</a></li>
-                <!-- <li><a href="#certifications">Certifications</a></li> -->
-                <li><a href="#education">Education</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-            <div class="theme-toggle">
-                <i class="fas fa-moon"></i>
-            </div>
-            <div class="hamburger">
-                <div class="line"></div>
-                <div class="line"></div>
-                <div class="line"></div>
-            </div>
-        </nav>
-    </header>
+<div class="aurora" aria-hidden="true"><span class="a1"></span><span class="a2"></span><span class="a3"></span></div>
 
-    <main>
-        <section id="home" class="hero">
-            <div class="container">
-                <div class="hero-content">
-                    <div class="text-content">
-                        <div class="greeting">👋 Hello, I'm</div>
-                        <h1>Satyam Raj</h1>
-                        <h2>Full Stack Developer</h2>
-                        <p class="hero-description">Passionate about creating innovative solutions and building meaningful applications. Transforming ideas into elegant, user-friendly experiences.</p>
-                        <div class="cta-buttons">
-                            <a href="#contact" class="cta-primary">Get in Touch</a>
-                            <a href="#projects" class="cta-secondary">View Projects</a>
-                            <a href="https://drive.google.com/file/d/1dLNBkWzP5FYcuJ9qQnFWWz3slbOqxiE-/view?usp=drive_link" class="cta-primary">Download Resume</a>
-                        </div>
-                        <div class="social-links">
-                            <a href="https://www.linkedin.com/in/stymrj" target="_blank" class="social-link">
-                                <i class="fab fa-linkedin"></i>
-                            </a>
-                            <a href="mailto:sstymrj@gmail.com" class="social-link">
-                                <i class="fas fa-envelope"></i>
-                            </a>
-                            <a href="https://github.com/stymrj" target="_blank" class="social-link">
-                                <i class="fab fa-github"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="hero-background">
-                <div class="shape shape-1"></div>
-                <div class="shape shape-2"></div>
-                <div class="shape shape-3"></div>
-            </div>
-        </section>
+<header id="header">
+  <nav class="container">
+    <div class="logo"><a href="#home">SR</a></div>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#home" class="active">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#coding-profiles">Coding Profiles</a></li>
+      <li><a href="#education">Education</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <button class="hamburger" id="hamburger" aria-label="Toggle menu"><span class="line"></span><span class="line"></span><span class="line"></span></button>
+  </nav>
+</header>
 
-        <section id="about" class="about">
-            <div class="container">
-                <h2>About Me</h2>
-                <div class="about-content">
-                    <div class="summary">
-                        <p>Motivated and growth-oriented individual seeking to build a meaningful career by continuously enhancing my skills and contributing effectively to organizational success through dedication and strategic thinking.</p>
-                    </div>
-                    <div class="skills">
-                        <h3>Technical Skills</h3>
-                        <div class="skill-tags">
-                            <span>HTML</span>
-                            <span>CSS</span>
-                            <span>JavaScript</span>
-                            <span>Java Core</span>
-                            <span>MySQL</span>
-                            <span>DBMS</span>
-                            <span>Computer Networks</span>
-                            <span>Cloud Computing</span>
-                        </div>
-                        <h3>Soft Skills</h3>
-                        <div class="skill-tags">
-                            <span>Decision making</span>
-                            <span>Teamwork</span>
-                            <span>Leadership</span>
-                            <span>Communication</span>
-                            <span>Time management</span>
-                            <span>Problem-solving</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="projects" class="projects">
-            <div class="container">
-              <h2>Projects</h2>
-              <div class="project-grid">
-          
-                <div class="project-card">
-                  <div class="card-content">
-                    <h3>FoodJunction</h3>
-                    <p class="date">November 2024</p>
-                    <p>A visually engaging landing page concept for a food delivery service, focused on attractive design and user-friendly layout.</p>
-                    <div class="tech-stack">
-                      <span>HTML</span>
-                      <span>CSS</span>
-                      <span>JavaScript</span>
-                    </div>
-                  </div>
-                  <a href="https://satyamraj.live/FoodJunction" target="_blank" class="project-link">View Project ↗</a>
-                </div>
-          
-                <div class="project-card">
-                  <div class="card-content">
-                    <h3>Currency Converter</h3>
-                    <p class="date">September 2024</p>
-                    <p>A real-time currency converter that fetches live exchange rates and provides instant results with a sleek user interface.</p>
-                    <div class="tech-stack">
-                      <span>HTML</span>
-                      <span>CSS</span>
-                      <span>JavaScript</span>
-                      <span>API</span>
-                    </div>
-                  </div>
-                  <a href="https://satyamraj.live/Currency-Converter" target="_blank" class="project-link">View Project ↗</a>
-                </div>
-          
-                <div class="project-card">
-                  <div class="card-content">
-                    <h3>Gender-Age Prediction</h3>
-                    <p class="date">May 2024</p>
-                    <p>A deep learning-based web app that predicts a person’s gender and age from uploaded images using a pre-trained CNN model.</p>
-                    <div class="tech-stack">
-                      <span>Python</span>
-                      <span>HTML</span>
-                      <span>CSS</span>
-                      <span>JavaScript</span>
-                      <span>Deep Learning</span>
-                      <span>Flask</span>
-                      <span>OpenCV</span>
-                    </div>
-                  </div>
-                  <a href="https://github.com/stymrj/Gender-Age-Prediction" target="_blank" class="project-link">View Project ↗</a>
-                </div>
-          
-                <div class="project-card">
-                  <div class="card-content">
-                    <h3>Rock Paper Scissors Game</h3>
-                    <p class="date">January 2024</p>
-                    <p>A simple and interactive Rock-Paper-Scissors game built for the browser and score tracking against the computer.</p>
-                    <div class="tech-stack">
-                      <span>HTML</span>
-                      <span>CSS</span>
-                      <span>JavaScript</span>
-                    </div>
-                  </div>
-                  <a href="https://satyamraj.live/Rock-Paper-Scissors-Game" target="_blank" class="project-link">View Project ↗</a>
-                </div>
-          
-                <div class="project-card">
-                  <div class="card-content">
-                    <h3>DrumBeatz</h3>
-                    <p class="date">August 2023</p>
-                    <p>An interactive drum kit web application that lets users play different drum sounds with a simple and responsive interface.</p>
-                    <div class="tech-stack">
-                      <span>HTML</span>
-                      <span>CSS</span>
-                      <span>JavaScript</span>
-                    </div>
-                  </div>
-                  <a href="https://satyamraj.live/DrumBeatz" target="_blank" class="project-link">View Project ↗</a>
-                </div>
-          
-              </div>
-            </div>
-        </section>
-          
-
-        <section id="coding-profiles" class="coding-profiles">
-            <div class="container">
-                <h2>Coding Profiles</h2>
-                <div class="profiles-grid">
-                    <div class="profile-card">
-                        <div class="platform-icon">
-                            <img src="gfg_logo.png" alt="GeeksforGeeks Logo" class="platform-logo">
-                        </div>
-                        <h3>GeeksforGeeks</h3>
-                        <div class="profile-stats">
-                            <div class="stat">
-                                <span class="stat-value">877</span>
-                                <span class="stat-label">Coding Score</span>
-                            </div>
-                            <div class="stat">
-                                <span class="stat-value">247</span>
-                                <span class="stat-label">Problems Solved</span>
-                            </div>
-                            <div class="stat">
-                                <span class="stat-value">46</span>
-                                <span class="stat-label">Institute Rank</span>
-                            </div>
-                        </div>
-                        <a href="https://www.geeksforgeeks.org/user/stymrj/" target="_blank" class="profile-link">
-                            <i class="fas fa-external-link-alt"></i> View Profile
-                        </a>
-                    </div>
-
-                    <div class="profile-card">
-                        <div class="platform-icon">
-                            <img src="leetcodelogo.jpg" alt="LeetCode Logo" class="platform-logo">
-                        </div>
-                        <h3>LeetCode</h3>
-                        <div class="profile-stats">
-                            <div class="stat">
-                                <i class="fas fa-star"></i>
-                                <span class="stat-label">Competitive Programming</span>
-                            </div>
-                        </div>
-                        <a href="https://leetcode.com/u/stymrj/" target="_blank" class="profile-link">
-                            <i class="fas fa-external-link-alt"></i> View Profile
-                        </a>
-                    </div>
-
-                    <div class="profile-card">
-                        <div class="platform-icon">
-                            <img src="hackerearthlogo.jpg" alt="HackerEarth Logo" class="platform-logo">
-                        </div>
-                        <h3>HackerEarth</h3>
-                        <div class="profile-stats">
-                            <div class="stat">
-                                <i class="fas fa-trophy"></i>
-                                <span class="stat-label">Competitive Coder</span>
-                            </div>
-                        </div>
-                        <a href="https://www.hackerearth.com/@stymrj/" target="_blank" class="profile-link">
-                            <i class="fas fa-external-link-alt"></i> View Profile
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- <section id="certifications" class="certifications">
-            <div class="container">
-                <h2>Certifications</h2>
-                <div class="certificates-grid">
-                    <div class="certificate-card">
-                        <div class="certificate-icon">
-                            <i class="fas fa-award"></i>
-                        </div>
-                        <div class="certificate-content">
-                            <a href="https://forage-uploads-prod.s3.amazonaws.com/completion-certificates/xhih9yFWsf6AYfngd/HNpZwZcuYwona2d8Y_xhih9yFWsf6AYfngd_8TXTHJDLDzTLGnr65_1741412243442_completion_certificate.pdf" 
-                               target="_blank" 
-                               class="certificate-title">
-                                <h3>Goldman Sachs Virtual Experience Program</h3>
-                            </a>
-                            <div class="certificate-details">
-                                <span class="certificate-date"><i class="far fa-calendar-alt"></i> March 2024</span>
-                                <span class="certificate-issuer"><i class="fas fa-building"></i> Goldman Sachs</span>
-                            </div>
-                            <p>Successfully completed the Goldman Sachs Software Engineering Virtual Experience Program, gaining hands-on experience in software development practices and financial technology.</p>
-                            <div class="certificate-actions">
-                                <a href="https://forage-uploads-prod.s3.amazonaws.com/completion-certificates/xhih9yFWsf6AYfngd/HNpZwZcuYwona2d8Y_xhih9yFWsf6AYfngd_8TXTHJDLDzTLGnr65_1741412243442_completion_certificate.pdf" 
-                                   target="_blank" 
-                                   class="view-certificate">
-                                    <i class="fas fa-certificate"></i> View Certificate
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="certificate-card">
-                        <div class="certificate-icon">
-                            <i class="fas fa-award"></i>
-                        </div>
-                        <div class="certificate-content">
-                            <a href="https://forage-uploads-prod.s3.amazonaws.com/completion-certificates/MBA4MnZTNFEoJZGnk/NPdeQ43o8P9HJmJzg_MBA4MnZTNFEoJZGnk_8TXTHJDLDzTLGnr65_1741425206242_completion_certificate.pdf" 
-                               target="_blank" 
-                               class="certificate-title">
-                                <h3>JPMorgan Chase Virtual Experience Program</h3>
-                            </a>
-                            <div class="certificate-details">
-                                <span class="certificate-date"><i class="far fa-calendar-alt"></i> March 2024</span>
-                                <span class="certificate-issuer"><i class="fas fa-building"></i> JPMorgan Chase</span>
-                            </div>
-                            <p>Completed the JPMorgan Chase Software Engineering Virtual Experience Program, focusing on real-world software engineering challenges and financial technology solutions.</p>
-                            <div class="certificate-actions">
-                                <a href="https://forage-uploads-prod.s3.amazonaws.com/completion-certificates/MBA4MnZTNFEoJZGnk/NPdeQ43o8P9HJmJzg_MBA4MnZTNFEoJZGnk_8TXTHJDLDzTLGnr65_1741425206242_completion_certificate.pdf" 
-                                   target="_blank" 
-                                   class="view-certificate">
-                                    <i class="fas fa-certificate"></i> View Certificate
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section> -->
-
-        <section id="education" class="education">
-            <div class="container">
-                <h2>Education</h2>
-                <div class="education-timeline">
-                    <!-- <div class="education-item">
-                        <div class="education-content">
-                            <h3>Masters of Computer Applications</h3>
-                            <p class="institution">Vellore Institute of Technology, Bhopal</p>
-                            <p class="duration">2024-2026 | 9.15 CGPA</p>
-                            <p class="tagline">VIT Bhopal</p>
-                        </div>
-                        <div class="college-logo">
-                            <img src="VIT_logo.jpg" 
-                                 alt="VIT University Logo"
-                                 class="university-logo vit-logo">
-                        </div>
-                    </div> -->
-                    <div class="education-item">
-                        <div class="education-content">
-                            <h3>Bachelors of Technology in Computer Science Engineering</h3>
-                            <p class="institution">DIT University, Dehradun</p>
-                            <p class="duration">2020-2024 | 8.11 CGPA</p>
-                            <p class="tagline">Imagine Aspire Achieve</p>
-                        </div>
-                        <div class="college-logo">
-                            <img src="DITlogo.webp" 
-                                 alt="DIT University Logo"
-                                 class="university-logo">
-                        </div>
-                    </div>
-                    <div class="education-item">
-                        <div class="education-content">
-                            <h3>Intermediate (Science)</h3>
-                            <p class="institution">Govt. Public School, Kanti, Muzaffarpur</p>
-                            <p class="duration">2018-2020 | 80%</p>
-                        </div>
-                        <div class="college-logo">
-                            <img src="Bihar.webp" 
-                                 alt="CMS Logo"
-                                 class="university-logo cms-logo">
-                        </div>
-                    </div>
-                    <div class="education-item">
-                        <div class="education-content">
-                            <h3>Matriculation (CBSE)</h3>
-                            <p class="institution">DAV Public School, Narhan-Panapur, East Champaran</p>
-                            <p class="duration">2016-2017 | 10 CGPA</p>
-                        </div>
-                        <div class="college-logo">
-                            <img src="dav.png" 
-                                 alt="CMS Logo"
-                                 class="university-logo cms-logo">
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="contact" class="contact">
-            <div class="container">
-                <h2>Contact Me</h2>
-                <div class="contact-content">
-                    <div class="contact-info">
-                        <div class="contact-header">
-                            <div class="contact-avatar">
-                                <img src="satyam.jpg" alt="Satyam Raj" class="contact-profile-img">
-                            </div>
-                            <h3>Let's Connect!</h3>
-                            <p class="contact-subtitle">Feel free to reach out for opportunities or collaborations</p>
-                        </div>
-                        <div class="contact-details">
-                            <div class="contact-item">
-                                <div class="contact-icon">
-                                    <i class="fas fa-map-marker-alt"></i>
-                                </div>
-                                <div class="contact-text">
-                                    <h4>Location</h4>
-                                    <p>Noida, Uttar Pradesh</p>
-                                </div>
-                            </div>
-                            <div class="contact-item">
-                                <div class="contact-icon">
-                                    <i class="fas fa-phone"></i>
-                                </div>
-                                <div class="contact-text">
-                                    <h4>Phone</h4>
-                                    <p>+918302783900</p>
-                                </div>
-                            </div>
-                            <div class="contact-item">
-                                <div class="contact-icon">
-                                    <i class="fas fa-envelope"></i>
-                                </div>
-                                <div class="contact-text">
-                                    <h4>Email</h4>
-                                    <p>sstymrj@gmail.com</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="contact-social-links">
-                            <a href="https://www.linkedin.com/in/stymrj" target="_blank" class="linkedin-btn">
-                                <i class="fab fa-linkedin"></i> Connect on LinkedIn
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <footer>
-        <div class="container">
-            <p>&copy; 2025 Satyam Raj. All rights reserved.</p>
+<main>
+  <!-- HERO -->
+  <section id="home" class="hero">
+    <div class="container">
+      <div class="hero-grid">
+        <div>
+          <p class="greeting">👋 Hello, I'm</p>
+          <h1><span class="grad">Satyam Raj</span></h1>
+          <h2>Software Developer — <b>AI Projects</b></h2>
+          <p class="hero-desc">Software Developer at Extension Technologies, building AI-powered products on the MERN stack — including Excitor KB, a RAG platform for ERPNext and project knowledge. I also write daily AWS deep-dives on Builder Center and ship DevOps tools in the open.</p>
+          <div class="cta-row">
+            <a href="#contact" class="btn btn-primary">Get in Touch <i class="fas fa-arrow-right"></i></a>
+            <a href="#projects" class="btn btn-ghost">View Projects</a>
+            <a href="https://drive.google.com/file/d/1dLNBkWzP5FYcuJ9qQnFWWz3slbOqxiE-/view?usp=drive_link" class="btn btn-primary" target="_blank" rel="noopener">Download Resume <i class="fas fa-download"></i></a>
+          </div>
+          <div class="socials">
+            <a href="https://www.linkedin.com/in/stymrj" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+            <a href="mailto:sstymrj@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
+            <a href="https://github.com/stymrj" target="_blank" rel="noopener" aria-label="GitHub"><i class="fab fa-github"></i></a>
+          </div>
         </div>
-    </footer>
+        <div class="hero-photo">
+          <div class="photo-ring"><img src="satyam.jpg" alt="Satyam Raj"></div>
+          <div class="avail"><span class="dot"></span> Open to opportunities</div>
+        </div>
+      </div>
+      <div class="stats-row">
+        <div class="stat reveal"><b>60+</b><span>DevOps interview guides</span></div>
+        <div class="stat reveal"><b>9</b><span>Projects shipped</span></div>
+        <div class="stat reveal"><b>3</b><span>Coding platforms</span></div>
+        <div class="stat reveal"><b>Daily</b><span>AWS articles</span></div>
+      </div>
+    </div>
+  </section>
 
-    <script src="script.js"></script>
+  <!-- ABOUT -->
+  <section id="about">
+    <div class="container">
+      <div class="center reveal"><span class="eyebrow">About Me</span><h2 class="section-title">Building with <span class="grad">AI, MERN &amp; DevOps</span></h2></div>
+      <div class="about-grid">
+        <div class="about-text reveal">
+          <p>Software Developer working on AI projects at Extension Technologies (Noida), where I build <b>Excitor KB</b> — an AI-powered RAG platform that turns ERPNext and project knowledge into citation-backed BRDs, FRDs and implementation plans. MERN full-stack by trade, DevOps by practice: AWS, Docker, Terraform and GitHub Actions. I write a daily AWS article on Builder Center and maintain open-source DevOps interview guides.</p>
+        </div>
+        <div class="reveal">
+          <div class="skill-group">
+            <h3><i class="fas fa-palette ic-violet"></i> Frontend</h3>
+            <div class="tags"><span>HTML</span><span>CSS</span><span>JavaScript</span><span>TypeScript</span><span>React</span><span>Next.js</span></div>
+          </div>
+          <div class="skill-group">
+            <h3><i class="fas fa-server ic-cyan"></i> Backend</h3>
+            <div class="tags"><span>Node.js</span><span>Express</span><span>MongoDB</span><span>MySQL</span><span>Python</span><span>Flask</span></div>
+          </div>
+          <div class="skill-group">
+            <h3><i class="fas fa-cloud ic-pink"></i> Cloud &amp; DevOps</h3>
+            <div class="tags"><span>AWS</span><span>Docker</span><span>Terraform</span><span>GitHub Actions</span><span>Kubernetes</span><span>CI/CD</span></div>
+          </div>
+          <div class="skill-group">
+            <h3><i class="fas fa-users ic-green"></i> Soft Skills</h3>
+            <div class="tags"><span>Decision making</span><span>Teamwork</span><span>Leadership</span><span>Communication</span><span>Time management</span><span>Problem-solving</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- EXPERIENCE -->
+  <section id="experience">
+    <div class="container">
+      <div class="center reveal"><span class="eyebrow">Experience</span><h2 class="section-title">Where I've <span class="grad">Worked</span></h2><p class="section-sub">Real products, real users — and a daily writing habit on AWS.</p></div>
+      <div class="timeline">
+        <div class="timeline-item reveal">
+          <div class="card">
+            <h3>Software Developer — AI Projects</h3>
+            <p class="org">Extension Technologies, Noida</p>
+            <span class="when">Present</span>
+            <p class="desc">Building Excitor KB, an AI-powered RAG platform for ERPNext and project knowledge — citation-backed BRD/FRD generation, requirement analysis, traceability and implementation planning. MERN full-stack development on AI products.</p>
+            <div class="tags"><span>React</span><span>Node.js</span><span>MongoDB</span><span>AI / RAG</span></div>
+          </div>
+        </div>
+        <div class="timeline-item reveal">
+          <div class="card">
+            <h3>Technical Author — AWS Builder Center</h3>
+            <p class="org">AWS Builder Center</p>
+            <span class="when">2026 — Present</span>
+            <p class="desc">Publishing daily hands-on AWS articles — KMS, X-Ray, IAM, ElastiCache, MSK, Cognito and more — and answering readers’ technical questions on each post.</p>
+            <div class="tags"><span>AWS</span><span>Technical Writing</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROJECTS -->
+  <section id="projects">
+    <div class="container">
+      <div class="center reveal"><span class="eyebrow">Projects</span><h2 class="section-title">Things I've <span class="grad">Built</span></h2><p class="section-sub">From open-source DevOps guides to a Solana hackathon build and ten deal-tracker tools.</p></div>
+      <div class="project-grid">
+        <article class="card project-card reveal">
+          <div class="bar"></div>
+          <div class="body">
+            <p class="date">2026</p>
+            <h3>DevOps Interview Preparation</h3>
+            <p class="desc">60+ deep-dive DevOps interview guides with labs, cheat sheets and real-world answers — CI/CD, observability, databases, Kubernetes and more. Published daily on GitHub.</p>
+            <div class="tags"><span>DevOps</span><span>AWS</span><span>Docker</span><span>Kubernetes</span><span>Terraform</span></div>
+            <a href="https://github.com/stymrj/Devops-Interview-Prepration" target="_blank" rel="noopener" class="project-link">View Project ↗</a>
+          </div>
+        </article>
+        <article class="card project-card reveal">
+          <div class="bar"></div>
+          <div class="body">
+            <p class="date">November 2026</p>
+            <h3>ClaimCheck</h3>
+            <p class="desc">AI pre-sign transaction explainer for Solana — explains what a transaction will actually do before you sign it. Built solo for the MLH Solana Hackathon (AI Track).</p>
+            <div class="tags"><span>Solana</span><span>Next.js</span><span>TypeScript</span><span>AI</span></div>
+            <a href="https://github.com/stymrj/claimcheck" target="_blank" rel="noopener" class="project-link">View Project ↗</a>
+          </div>
+        </article>
+        <article class="card project-card reveal">
+          <div class="bar"></div>
+          <div class="body">
+            <p class="date">November 2026</p>
+            <h3>PriceDrop Hunter</h3>
+            <p class="desc">Ten deal-tracker tools (Amazon, Flipkart, Blinkit, Zepto, Swiggy Instamart and more) with fallback endpoints, self-test, deeper scans and Telegram price-history bots.</p>
+            <div class="tags"><span>JavaScript</span><span>Telegram Bot API</span></div>
+            <a href="https://github.com/stymrj/PriceDrop-Hunter" target="_blank" rel="noopener" class="project-link">View Project ↗</a>
+          </div>
+        </article>
+        <article class="card project-card reveal">
+          <div class="bar"></div>
+          <div class="body">
+            <p class="date">November 2026</p>
+            <h3>Insta Unfollow</h3>
+            <p class="desc">Chrome extension that analyses your Instagram following list — search, sort, filter and export flagged accounts to CSV. v1 live on the Chrome Web Store.</p>
+            <div class="tags"><span>JavaScript</span><span>Chrome Extensions</span></div>
+            <a href="https://github.com/stymrj/Insta-Unfollow" target="_blank" rel="noopener" class="project-link">View Project ↗</a>
+          </div>
+        </article>
+        <article class="card project-card reveal">
+          <div class="bar"></div>
+          <div class="body">
+            <p class="date">November 2024</p>
+            <h3>FoodJunction</h3>
+            <p class="desc">A visually engaging landing page concept for a food delivery service, focused on attractive design and user-friendly layout.</p>
+            <div class="tags"><span>HTML</span><span>CSS</span><span>JavaScript</span></div>
+            <a href="https://github.com/stymrj/FoodJunction" target="_blank" rel="noopener" class="project-link">View Project ↗</a>
+          </div>
+        </article>
+        <article class="card project-card reveal">
+          <div class="bar"></div>
+          <div class="body">
+            <p class="date">September 2024</p>
+            <h3>Currency Converter</h3>
+            <p class="desc">A real-time currency converter that fetches live exchange rates and provides instant results with a sleek user interface.</p>
+            <div class="tags"><span>HTML</span><span>CSS</span><span>JavaScript</span><span>API</span></div>
+            <a href="https://github.com/stymrj/Currency-Converter" target="_blank" rel="noopener" class="project-link">View Project ↗</a>
+          </div>
+        </article>
+        <article class="card project-card reveal">
+          <div class="bar"></div>
+          <div class="body">
+            <p class="date">May 2024</p>
+            <h3>Gender-Age Prediction</h3>
+            <p class="desc">A deep learning-based web app that predicts a person’s gender and age from uploaded images using a pre-trained CNN model.</p>
+            <div class="tags"><span>Python</span><span>HTML</span><span>CSS</span><span>JavaScript</span><span>Deep Learning</span><span>Flask</span><span>OpenCV</span></div>
+            <a href="https://github.com/stymrj/Gender-Age-Prediction" target="_blank" rel="noopener" class="project-link">View Project ↗</a>
+          </div>
+        </article>
+        <article class="card project-card reveal">
+          <div class="bar"></div>
+          <div class="body">
+            <p class="date">January 2024</p>
+            <h3>Rock Paper Scissors Game</h3>
+            <p class="desc">A simple and interactive Rock-Paper-Scissors game built for the browser and score tracking against the computer.</p>
+            <div class="tags"><span>HTML</span><span>CSS</span><span>JavaScript</span></div>
+            <a href="https://github.com/stymrj/Rock-Paper-Scissors-Game" target="_blank" rel="noopener" class="project-link">View Project ↗</a>
+          </div>
+        </article>
+        <article class="card project-card reveal">
+          <div class="bar"></div>
+          <div class="body">
+            <p class="date">August 2023</p>
+            <h3>DrumBeatz</h3>
+            <p class="desc">An interactive drum kit web application that lets users play different drum sounds with a simple and responsive interface.</p>
+            <div class="tags"><span>HTML</span><span>CSS</span><span>JavaScript</span></div>
+            <a href="https://github.com/stymrj/DrumBeatz" target="_blank" rel="noopener" class="project-link">View Project ↗</a>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- CODING PROFILES -->
+  <section id="coding-profiles">
+    <div class="container">
+      <div class="center reveal"><span class="eyebrow">Coding Profiles</span><h2 class="section-title">Where I <span class="grad">Practice</span></h2></div>
+      <div class="profiles-grid">
+        <div class="card profile-card reveal">
+          <div class="logo-wrap"><img src="gfg_logo.png" alt="GeeksforGeeks Logo"></div>
+          <h3>GeeksforGeeks</h3>
+          <p class="label"><i class="fas fa-code"></i>Daily Problem of the Day</p>
+          <a href="https://www.geeksforgeeks.org/user/stymrj/" target="_blank" rel="noopener" class="profile-link"><i class="fas fa-external-link-alt"></i> View Profile</a>
+        </div>
+        <div class="card profile-card reveal">
+          <div class="logo-wrap"><img src="leetcodelogo.jpg" alt="LeetCode Logo"></div>
+          <h3>LeetCode</h3>
+          <p class="label"><i class="fas fa-star"></i>Competitive Programming</p>
+          <a href="https://leetcode.com/u/stymrj/" target="_blank" rel="noopener" class="profile-link"><i class="fas fa-external-link-alt"></i> View Profile</a>
+        </div>
+        <div class="card profile-card reveal">
+          <div class="logo-wrap"><img src="hackerearthlogo.jpg" alt="HackerEarth Logo"></div>
+          <h3>HackerEarth</h3>
+          <p class="label"><i class="fas fa-trophy"></i>Competitive Coder</p>
+          <a href="https://www.hackerearth.com/@stymrj/" target="_blank" rel="noopener" class="profile-link"><i class="fas fa-external-link-alt"></i> View Profile</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- EDUCATION -->
+  <section id="education">
+    <div class="container">
+      <div class="center reveal"><span class="eyebrow">Education</span><h2 class="section-title">My <span class="grad">Journey</span></h2></div>
+      <div class="edu-list">
+        <div class="card edu-item reveal">
+          <div class="edu-logo"><img src="DITlogo.webp" alt="DIT University Logo"></div>
+          <div>
+            <h3>Bachelors of Technology in Computer Science Engineering</h3>
+            <p class="inst">DIT University, Dehradun</p>
+            <p class="meta">2020-2024 | 8.11 CGPA</p>
+            <p class="tagline">Imagine Aspire Achieve</p>
+          </div>
+        </div>
+        <div class="card edu-item reveal">
+          <div class="edu-logo"><img src="Bihar.webp" alt="Bihar Board Logo"></div>
+          <div>
+            <h3>Intermediate (Science)</h3>
+            <p class="inst">Govt. Public School, Kanti, Muzaffarpur</p>
+            <p class="meta">2018-2020 | 80%</p>
+          </div>
+        </div>
+        <div class="card edu-item reveal">
+          <div class="edu-logo"><img src="dav.png" alt="DAV Public School Logo"></div>
+          <div>
+            <h3>Matriculation (CBSE)</h3>
+            <p class="inst">DAV Public School, Narhan-Panapur, East Champaran</p>
+            <p class="meta">2016-2017 | 10 CGPA</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact">
+    <div class="container">
+      <div class="center reveal"><span class="eyebrow">Contact Me</span><h2 class="section-title">Let's <span class="grad">Connect</span></h2></div>
+      <div class="card contact-card reveal">
+        <img src="satyam.jpg" alt="Satyam Raj" class="avatar">
+        <h3>Let's Connect!</h3>
+        <p class="sub">Feel free to reach out for opportunities or collaborations</p>
+        <div class="contact-rows">
+          <div class="row"><i class="fas fa-map-marker-alt"></i><span>Location</span><b>Noida, Uttar Pradesh</b></div>
+          <div class="row"><i class="fas fa-phone"></i><span>Phone</span><b>+918302783900</b></div>
+          <div class="row"><i class="fas fa-envelope"></i><span>Email</span><b>sstymrj@gmail.com</b></div>
+        </div>
+        <a href="https://www.linkedin.com/in/stymrj" target="_blank" rel="noopener" class="btn btn-primary"><i class="fab fa-linkedin"></i> Connect on LinkedIn</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="container">
+    <p>&copy; 2026 Satyam Raj. All rights reserved. <span class="grad-dot">●</span> Built with MERN, DevOps &amp; late nights.</p>
+  </div>
+</footer>
+
+<script>
+// Mobile menu
+var hamburger = document.getElementById('hamburger');
+var navLinks = document.getElementById('navLinks');
+hamburger.addEventListener('click', function () {
+  navLinks.classList.toggle('active');
+  hamburger.classList.toggle('active');
+  document.body.style.overflow = navLinks.classList.contains('active') ? 'hidden' : '';
+});
+document.querySelectorAll('.nav-links a').forEach(function (link) {
+  link.addEventListener('click', function () {
+    navLinks.classList.remove('active');
+    hamburger.classList.remove('active');
+    document.body.style.overflow = '';
+  });
+});
+
+// Header shadow on scroll + active nav link
+var header = document.getElementById('header');
+var sections = document.querySelectorAll('main section[id]');
+var navItems = document.querySelectorAll('.nav-links a');
+window.addEventListener('scroll', function () {
+  header.classList.toggle('scrolled', window.scrollY > 10);
+  var current = 'home';
+  sections.forEach(function (section) {
+    if (window.scrollY >= section.offsetTop - 120) current = section.getAttribute('id');
+  });
+  navItems.forEach(function (item) {
+    item.classList.toggle('active', item.getAttribute('href') === '#' + current);
+  });
+}, { passive: true });
+
+// Scroll reveal
+var io = new IntersectionObserver(function (entries) {
+  entries.forEach(function (e) {
+    if (e.isIntersecting) { e.target.classList.add('visible'); io.unobserve(e.target); }
+  });
+}, { threshold: 0.12 });
+document.querySelectorAll('.reveal').forEach(function (el) { io.observe(el); });
+</script>
 </body>
 </html>
